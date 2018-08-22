@@ -7,6 +7,8 @@ import fastClick from 'fastclick'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 /*
   fastClick:用于解决移动端click事件相应300ms的问题，因为移动端需要检查有没有双击，在webapp上我们不需要双击事件
   reset.css:用于一些标签的初始化
@@ -15,6 +17,7 @@ import 'styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
+Vue.use(VueAwesomeSwiper)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
