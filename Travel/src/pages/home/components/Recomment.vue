@@ -4,7 +4,7 @@
             猜你喜欢
         </div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommentList" :key = "item.id">
+            <li class="item border-bottom" v-for="item of list" :key = "item.id">
                 <img class="item-img" :src="item.imgUrl" alt="">
                 
                 <div class="item-info">
@@ -20,29 +20,8 @@
 <script>
 export default {
     name: "HomeRecomment",
-    data(){
-        return {
-            recommentList:[
-                {
-                    id: '001',
-                    imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/18/18ffcca94b1b7ca2.water.jpg_200x200_9b0d2dc4.jpg',
-                    descTitle: '大连海洋世界',
-                    descContext: '浪漫大连浪漫大连浪漫大连'
-                },
-                {
-                    id: '002',
-                    imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/18/18ffcca94b1b7ca2.water.jpg_200x200_9b0d2dc4.jpg',
-                    descTitle: '大连海洋世界',
-                    descContext: '浪漫大连浪漫大连浪漫大连'
-                },
-                {
-                    id: '003',
-                    imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/18/18ffcca94b1b7ca2.water.jpg_200x200_9b0d2dc4.jpg',
-                    descTitle: '大连海洋世界',
-                    descContext: '浪漫大连浪漫大连浪漫大连'
-                }
-            ]
-        }
+    props: {
+        list: Array
     }
 }
 </script>
