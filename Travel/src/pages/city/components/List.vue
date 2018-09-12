@@ -6,7 +6,7 @@
                 <div class="buttom-list">
                     <div class="buttom-wraper">
                         <div class="buttom">
-                            北京
+                            {{this.$store.state.city}}
                         </div>
                     </div>
                 </div>
@@ -14,7 +14,11 @@
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="buttom-list">
-                    <div class="buttom-wraper" v-for="item of hot" :key="item.id">
+                    <div 
+                    class="buttom-wraper" 
+                    v-for="item of hot" 
+                    :key="item.id"
+                    @click="handleClickCity(item.name)" >
                         <div class="buttom">
                             {{item.name}}
                         </div>
@@ -46,8 +50,14 @@ export default {
         hot: Array,
         letter: String
     },
+    methods: {
+        handleClickCity (city) {
+            this.$store.dispatch('changeCity', city)
+            this.$router.push('/')
+        }
+    },
     mounted() {
-        this.scroll = new Bscroll(this.$refs.wrapper)
+        this.scroll = new Bscroll(this.$refs.wrapper,{click:true})
     },
     watch: {  //侦听器，侦听letter属性变化
         letter (){     //根据letter属性变化改变页面滚动位置
@@ -56,7 +66,8 @@ export default {
                 this.scroll.scrollToElement(element)
             }
         }
-    }
+    },
+    
 }
 </script>
 

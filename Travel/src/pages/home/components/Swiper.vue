@@ -13,20 +13,20 @@
 </template>
 
 <script>
-    export default {
-        name: "HomeSwiper",
-        data: function(){
-            return {
-                swiperOption: {
-                    pagination: '.swiper-pagination',
-                    loop: true,
-                }
+export default {
+    name: "HomeSwiper",
+    data: function(){
+        return {
+            swiperOption: {
+                pagination: '.swiper-pagination',
+                loop: true,
             }
-        },
-        props: {
-            list: Array
         }
+    },
+    props: {
+        list: Array
     }
+}
 </script>
 
 <style lang="stylus" scoped>

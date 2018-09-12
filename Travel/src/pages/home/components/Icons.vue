@@ -14,39 +14,39 @@
 </template>
 
 <script>
-    export default {
-        name: "HomeIcons",
-        data() {
-            return {
-                swiperOption: {
-                    autoplay: false
-                }
+export default {
+  name: "HomeIcons",
+    data() {
+        return {
+            swiperOption: {
+                autoplay: false
             }
-        },
-        props: {
-            list: Array
-        },
-        created:function(){
-            const _this = this;
-            console.log(_this.list)
-        },
-        computed: {
-            pages() {
-                const pages = [];
-                let _this = this;
-                if(_this.list){
-                    this.list.forEach((item , index) => {
-                        const page = Math.floor(index / 8);
-                        if(!pages[page]){
-                            pages[page] = []
-                        }
-                        pages[page].push(item);
-                    })
-                    return pages
-                }
+        }
+    },
+    props: {
+        list: Array
+    },
+    created:function(){
+        const _this = this;
+        console.log(_this.list)
+    },
+    computed: {
+        pages() {
+            const pages = [];
+            let _this = this;
+            if(_this.list){
+                this.list.forEach((item , index) => {
+                    const page = Math.floor(index / 8);
+                    if(!pages[page]){
+                        pages[page] = []
+                    }
+                    pages[page].push(item);
+                })
+                return pages
             }
         }
     }
+}
 </script>
 
 <style lang="stylus" scoped>
